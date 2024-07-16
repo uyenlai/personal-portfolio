@@ -73,6 +73,15 @@ h6 {
   opacity: 0.75;
 }
 
+.navbar-expand-lg .navbar-nav .nav-text.active {
+  opacity: 1;
+}
+
+.navbar-expand-lg .navbar-nav .nav-icons {
+  display: flex;
+  margin-left: 2rem;
+}
+
 .navbar-expand-lg .navbar-nav .nav-icon {
   width: 42px;
   height: 42px;
@@ -80,13 +89,14 @@ h6 {
   border-radius: 50%;
   text-align: center;
   line-height: 1;
-  margin: 0 1rem;
+  margin: 0 0.5rem;
   opacity: 0.75;
 }
 
 .navbar-expand-lg .navbar-nav .nav-text:hover,
 .navbar-expand-lg .navbar-nav .nav-text:active,
-.navbar-expand-lg .navbar-nav .nav-icon:hover {
+.navbar-expand-lg .navbar-nav .nav-icon:hover,
+.navbar-expand-lg .navbar-nav .nav-icon:active {
   opacity: 1;
   scale: 1.05;
   transition: all 0.3s ease-in-out;
@@ -96,12 +106,51 @@ h6 {
   border: rgba(255, 255, 255, 0.5) solid 1px;
   border-bottom: rgba(255, 255, 255, 0.5) solid 3px;
   border-right: rgba(255, 255, 255, 0.5) solid 3px;
-  margin-left: 5rem;
 }
 
-.navbar-expand-lg .navbar-nav .nav-text.cta:hover {
+.navbar-expand-lg .navbar-nav .nav-text.cta:hover,
+.navbar-expand-lg .navbar-nav .nav-text.cta:active {
   border: rgba(255, 255, 255, 0.9) solid 1px;
   border-bottom: rgba(255, 255, 255, 0.9) solid 3px;
   border-right: rgba(255, 255, 255, 0.9) solid 3px;
-  background-color: rgba(201,201,255, 0.85)
+  background-color: rgba(201, 201, 255, 0.85);
+}
+
+.navbar .navbar-toggler {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.navbar .navbar-toggler-icon {
+  filter: invert(1) brightness(1);
+}
+
+.navbar .navbar-toggler-icon.expanded {
+  filter: invert(0);
+  opacity: 0.8;
+  background-image: url("./assets/img/close-btn.svg");
+}
+
+.navbar .navbar-toggler:hover,
+.navbar .navbar-toggler:active {
+  border: 3px solid rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease-in-out;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .navbar .me-auto {
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  .navbar .nav-icons {
+    margin: 1rem 1.5rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .navbar .nav-text.cta {
+    margin: 0 auto;
+    width: 75%;
+  }
 }
