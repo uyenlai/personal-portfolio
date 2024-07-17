@@ -7,6 +7,7 @@ import headerImg from "../assets/img/header-img.svg";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import Button from "react-bootstrap/esm/Button";
 import resume from "../documents/Uyen Lai - Resume - FrontEndDev.pdf";
+import Typewriter from "typewriter-effect";
 
 const Banner = () => {
   return (
@@ -15,7 +16,25 @@ const Banner = () => {
         <Row>
           <Col xs={12} md={6} xl={7} className="text">
             <h5>Welcome to my portfolio!</h5>
-            <h1>Hi! I'm Uyen Lai</h1>
+            <h1>
+              <Typewriter
+                onInit={(typewrite) => {
+                  typewrite
+                    .typeString("Hi! I'm Uyen Lai.")
+                    .pauseFor(300)
+                    .deleteChars(9)
+                    .typeString("a front-end developer")
+                    .pauseFor(1000)
+                    .start();
+                }}
+                options={{
+                  autoStart: true,
+                  loop: true,
+                  delay: 75,
+                  deleteSpeed: 50,
+                }}
+              />
+            </h1>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam
               provident laudantium eum perferendis excepturi recusandae tempora,

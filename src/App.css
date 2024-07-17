@@ -148,7 +148,6 @@ h6 {
 }
 
 /* Banner */
-
 .banner {
   height: 100%;
   min-height: 100vh;
@@ -195,9 +194,8 @@ h6 {
 
 .banner .text h1 {
   padding: 8px 0;
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-weight: 700;
-  letter-spacing: 4px;
 }
 
 .banner p {
