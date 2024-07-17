@@ -25,7 +25,7 @@
 html {
   scroll-behavior: smooth;
   scroll-snap-type: y mandatory;
-  scroll-padding-top: 75px;
+  scroll-padding-top: 100px;
 }
 
 body {
@@ -49,6 +49,13 @@ h6 {
 }
 
 /* NavBar */
+#root > nav {
+  padding: 2rem 0;
+  position: fixed;
+  background-color: transparent;
+  width: 100%;
+  z-index: 9999;
+}
 
 .navbar-brand {
   width: 9%;
@@ -113,11 +120,15 @@ h6 {
   border: rgba(255, 255, 255, 0.9) solid 1px;
   border-bottom: rgba(255, 255, 255, 0.9) solid 3px;
   border-right: rgba(255, 255, 255, 0.9) solid 3px;
-  background-color: rgba(201, 201, 255, 0.85);
+  background-image: linear-gradient(
+    90.21deg,
+    rgba(170, 54, 124, 0.5) -5.91%,
+    rgba(74, 47, 189, 0.5) 111.58%
+  );
 }
 
 .navbar .navbar-toggler {
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  border: 3px solid rgba(255, 255, 255, 0.4);
 }
 
 .navbar .navbar-toggler-icon {
@@ -136,11 +147,114 @@ h6 {
   transition: all 0.3s ease-in-out;
 }
 
+/* Banner */
+
+.banner {
+  height: 100%;
+  min-height: 100vh;
+  background-image: url(./assets/img/banner-bg.png);
+  background-repeat: no-repeat;
+  background-position: top-center;
+  background-size: cover;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+.banner .text {
+  padding: 3.5rem 1rem;
+}
+
+.banner .text h5 {
+  font-size: 18px;
+  padding: 12px;
+  width: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background-image: linear-gradient(
+    90.21deg,
+    rgba(170, 54, 124, 0.5) -5.91%,
+    rgba(74, 47, 189, 0.5) 111.58%
+  );
+  background-size: 1000% 1000%;
+  text-align: center;
+  animation: welcomeAnimate 2s ease infinite;
+}
+
+@keyframes welcomeAnimate {
+  0% {
+    background-position: 0% 51%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 51%;
+  }
+}
+
+.banner .text h1 {
+  padding: 8px 0;
+  font-size: 3.5rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+}
+
+.banner p {
+  opacity: 0.6;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+}
+
+.banner button {
+  font-size: 22px;
+  font-weight: 500;
+  padding: 8px 16px;
+  background-color: transparent;
+  border: 1px solid rgba(239, 235, 238, 0.7);
+}
+
+.banner button a {
+  all: unset;
+}
+
+.banner button:hover,
+.banner button:active,
+.banner .bi-arrow-right-circle:hover,
+.banner .bi-arrow-right-circle:active {
+  background-color: transparent;
+  transform: translateY(-5px);
+  transition: all 0.5s ease-in-out;
+}
+
+.banner .bi-arrow-right-circle {
+  margin: 0 10px;
+  line-height: 32px;
+}
+
+.banner img {
+  padding-top: 1rem;
+  animation: floatingImg linear 3s infinite;
+}
+
+@keyframes floatingImg {
+  0% {
+    transform: translateY(-16px);
+  }
+  50% {
+    transform: translateY(16px);
+  }
+  100% {
+    transform: translateY(-16px);
+  }
+}
+
 /* RESPONSIVE */
 @media (max-width: 992px) {
   .navbar .me-auto {
     text-align: center;
-    margin-top: 2rem;
+    padding: 1rem 0;
+    background-color: rgba(15, 13, 13, 0.85);
   }
 
   .navbar .nav-icons {
@@ -152,5 +266,11 @@ h6 {
   .navbar .nav-text.cta {
     margin: 0 auto;
     width: 75%;
+  }
+}
+
+@media (max-width: 768px) {
+  .banner .container {
+    margin-top: 5rem;
   }
 }
