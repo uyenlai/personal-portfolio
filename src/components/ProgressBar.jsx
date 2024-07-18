@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import classes from "./ProgressBar.module.css";
 
-const ProgressBar = () => {
+const ProgressBar = ({ skill }) => {
   const [percentage, setPercentage] = useState(0);
 
   useEffect(() => {
@@ -16,7 +16,7 @@ const ProgressBar = () => {
       });
 
       return () => clearInterval(interval);
-    }, 47);
+    }, 40);
   }, []);
 
   return (
@@ -40,6 +40,7 @@ const ProgressBar = () => {
         </defs>
         <circle cx="79.5" cy="80" r="68" strokeLinecap="round" />
       </svg>
+      <p>{skill}</p>
     </div>
   );
 };

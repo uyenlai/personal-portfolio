@@ -261,7 +261,7 @@ h6 {
   width: 80%;
   margin-top: -40px;
   border-radius: 64px;
-  background-color: rgba(21, 21, 21, 0.6);
+  background-color: rgba(21, 21, 21, 0.8);
   margin-left: auto;
   margin-right: auto;
   text-align: center;
@@ -275,7 +275,7 @@ h6 {
 }
 
 .skills .skills-slider p {
-  opacity: 0.65;
+  color: #B8B8B8;
   letter-spacing: 2px;
 }
 

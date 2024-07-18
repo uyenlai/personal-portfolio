@@ -2,6 +2,12 @@
   width: 160px;
   height: 160px;
   position: relative;
+  margin: 0 3rem;
+}
+
+.container p {
+  margin-top: 8px;
+  font-weight: 700;
 }
 
 .outer {
