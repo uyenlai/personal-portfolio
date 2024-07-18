@@ -20,10 +20,10 @@ const Banner = () => {
               <Typewriter
                 onInit={(typewrite) => {
                   typewrite
-                    .typeString("Hi! I'm Uyen Lai.")
+                    .typeString("Hi! I'm Uyen Lai")
                     .pauseFor(300)
                     .deleteChars(9)
-                    .typeString("a front-end developer")
+                    .typeString(" a front-end developer")
                     .pauseFor(1000)
                     .start();
                 }}
