@@ -1,12 +1,34 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Container from "react-bootstrap/esm/Container";
 import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/esm/Col";
 import SkillSlider from "./SkillSlider";
 
 const Skills = () => {
+  const [loading, setLoading] = useState(true);
+  const [count, setCount] = useState(0);
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setLoading(false);
+    }, 10000);
+    return () => clearTimeout(timeout);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCount((prevCount) => {
+        if (prevCount < 10) {
+          return prevCount + 1;
+        } else {
+          return prevCount;
+        }
+      });
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <section className="skills">
+    <section id="skill" className="skills">
       <Container>
         <Row>
           <Col xs={12} md={12} xl={12}>
@@ -18,6 +40,11 @@ const Skills = () => {
                 exercitationem dolore repudiandae harum doloribus id at, earum
                 provident, consectetur consequatur ab. Non, quas.
               </p>
+              {loading && (
+                <p>
+                  <i>Loading data...: {`${10 - count}`}</i>
+                </p>
+              )}
               <SkillSlider />
             </div>
           </Col>

@@ -1,29 +1,33 @@
 import React, { useEffect, useState } from "react";
 import classes from "./ProgressBar.module.css";
 
-const ProgressBar = ({ skill }) => {
-  const [percentage, setPercentage] = useState(0);
+const ProgressBar = ({ skill, percentage }) => {
+  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setPercentage((prevState) => {
-        if (prevState === 65) {
-          clearInterval(interval);
-          return prevState;
-        } else {
-          return prevState + 1;
-        }
-      });
-
+    const timeout = setTimeout(() => {
+      const interval = setInterval(() => {
+        setProgress((prevState) => {
+          if (prevState === percentage) {
+            clearInterval(interval);
+            return prevState;
+          } else {
+            return prevState + 1;
+          }
+        });
+      }, 25);
       return () => clearInterval(interval);
-    }, 40);
-  }, []);
+    }, 10000);
+    return () => clearTimeout(timeout);
+  }, [percentage]);
+
+  let strokeDashoffset = 452 - (percentage * 452) / 100;
 
   return (
     <div className={classes.container}>
       <div className={classes.outer}>
         <div className={classes.inner}>
-          <div className={classes.number}>{percentage}%</div>
+          <div className={classes.number}>{progress}%</div>
         </div>
       </div>
       <svg
@@ -38,7 +42,15 @@ const ProgressBar = ({ skill }) => {
             <stop offset="100%" stopColor="rgba(74, 47, 189, 0.8)" />
           </linearGradient>
         </defs>
-        <circle cx="79.5" cy="80" r="68" strokeLinecap="round" />
+        <circle
+          cx="80"
+          cy="80"
+          r="72"
+          strokeLinecap="round"
+          style={{
+            "--stroke-dashoffset": strokeDashoffset,
+          }}
+        />
       </svg>
       <p>{skill}</p>
     </div>

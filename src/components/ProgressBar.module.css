@@ -2,11 +2,11 @@
   width: 160px;
   height: 160px;
   position: relative;
-  margin: 0 3rem;
+  margin: 0 24px;
 }
 
 .container p {
-  margin-top: 8px;
+  margin-top: 2rem;
   font-weight: 700;
 }
 
@@ -27,7 +27,7 @@
 }
 
 .number {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 600;
 }
 
@@ -39,27 +39,35 @@ svg {
 
 svg circle {
   fill: none;
-  stroke: url('#GradientColor');
+  stroke: url("#GradientColor");
   stroke-width: 16px;
-  stroke-dasharray: 472;
-  stroke-dashoffset: 472;
-  animation: progressing 1.5s linear forwards;
+  stroke-dasharray: 452;
+  stroke-dashoffset: 445;
+  animation: progressing 2s 10s linear forwards;
 }
 
 @keyframes progressing {
-    100% {
-        stroke-dashoffset: 165;
-    }
+  100% {
+    stroke-dashoffset: var(--stroke-dashoffset);
+  }
 }
 
-
 /* RESPONSIVE */
+@media (max-width: 767px) {
+  .container {
+    margin-bottom: 1rem;
+  }
+
+  .container p {
+    margin-top: 12px;
+  }
+}
+
 @media (min-width: 768px) and (max-width: 991px) {
   .container {
     margin: 0 4px;
   }
 }
-
 
 @media (min-width: 992px) and (max-width: 1199px) {
   .container {

@@ -4,10 +4,9 @@ import ProgressBar from "./ProgressBar";
 
 const SkillSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const array = [
-    ["HTML", "CSS", "JavaScript"],
-    ["React", "Tailwind", "Git"],
-  ];
+  const percentage = [90, 89, 87, 85, 80, 95];
+  const array = ["HTML", "CSS", "JavaScript", "React", "Tailwind", "Git"];
+
   const goToNextSlide = () => {
     setCurrentIndex((prevState) =>
       prevState === array.length - 1 ? 0 : prevState + 1
@@ -23,28 +22,20 @@ const SkillSlider = () => {
   return (
     <div className={classes.slider}>
       <div className={classes.sliderItem}>
-        {array.map((item, index) => (
+        {percentage.map((value, index) => (
           <div
             className={classes.slide}
-            key={index}
+            key={value}
             style={{ transform: `translateX(${currentIndex * -100}%)` }}
           >
-            {item.map((subItem, index) => (
-              <ProgressBar skill={subItem} key={index} />
-            ))}
+            <ProgressBar percentage={value} skill={array[index]} />
           </div>
         ))}
 
-        <button
-          className={classes.leftBtn}
-          onClick={goToPreviousSlide}
-        >
+        <button className={classes.leftBtn} onClick={goToPreviousSlide}>
           <i className="bi bi-arrow-left-short"></i>
         </button>
-        <button
-          className={classes.rightBtn}
-          onClick={goToNextSlide}
-        >
+        <button className={classes.rightBtn} onClick={goToNextSlide}>
           <i className="bi bi-arrow-right-short"></i>
         </button>
       </div>
