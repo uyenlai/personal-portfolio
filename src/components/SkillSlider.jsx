@@ -36,14 +36,15 @@ const SkillSlider = () => {
         ))}
 
         <button
-          style={{
-            left: "5%",
-          }}
+          className={classes.leftBtn}
           onClick={goToPreviousSlide}
         >
           <i className="bi bi-arrow-left-short"></i>
         </button>
-        <button style={{ right: "6%" }} onClick={goToNextSlide}>
+        <button
+          className={classes.rightBtn}
+          onClick={goToNextSlide}
+        >
           <i className="bi bi-arrow-right-short"></i>
         </button>
       </div>
