@@ -42,14 +42,7 @@ svg circle {
   stroke: url("#GradientColor");
   stroke-width: 16px;
   stroke-dasharray: 452;
-  stroke-dashoffset: 445;
-  animation: progressing 2s 10s linear forwards;
-}
-
-@keyframes progressing {
-  100% {
-    stroke-dashoffset: var(--stroke-dashoffset);
-  }
+  transition: stroke-dashoffset 2s linear;
 }
 
 /* RESPONSIVE */

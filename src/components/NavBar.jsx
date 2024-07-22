@@ -54,6 +54,14 @@ const NavBar = () => {
         observer.observe(section);
       }
     });
+
+    return () => {
+      sections.forEach((section) => {
+        if (section) {
+          observer.unobserve(section);
+        }
+      });
+    };
   }, []);
 
   return (

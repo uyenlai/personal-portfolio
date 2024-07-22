@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import classes from "./SkillSlider.module.css";
 import ProgressBar from "./ProgressBar";
 
@@ -6,6 +6,7 @@ const SkillSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const percentage = [90, 89, 87, 85, 80, 88];
   const array = ["HTML", "CSS", "JavaScript", "React", "Tailwind", "Git"];
+  const [isRunning, setIsRunning] = useState(false);
 
   const goToNextSlide = () => {
     setCurrentIndex((prevState) =>
@@ -19,8 +20,37 @@ const SkillSlider = () => {
     );
   };
 
+  useEffect(() => {
+    const slider = document.getElementById("slider");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsRunning(true);
+          } else {
+            setIsRunning(false);
+          }
+        });
+      },
+      {
+        threshold: 1,
+      }
+    );
+
+    if (slider) {
+      observer.observe(slider);
+    }
+
+    return () => {
+      if (slider) {
+        observer.unobserve(slider);
+      }
+    };
+  }, []);
+
   return (
-    <div className={classes.slider}>
+    <div id="slider" className={classes.slider}>
       <div className={classes.sliderItem}>
         {percentage.map((value, index) => (
           <div
@@ -28,7 +58,11 @@ const SkillSlider = () => {
             key={value}
             style={{ transform: `translateX(${currentIndex * -100}%)` }}
           >
-            <ProgressBar percentage={value} skill={array[index]} />
+            <ProgressBar
+              percentage={value}
+              skill={array[index]}
+              isRunning={isRunning}
+            />
           </div>
         ))}
 
