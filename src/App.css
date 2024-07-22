@@ -24,8 +24,6 @@
 
 html {
   scroll-behavior: smooth;
-  /* scroll-snap-type: y mandatory; */
-  /* scroll-padding-top: 100px; */
 }
 
 body {
@@ -159,7 +157,6 @@ h6 {
   background-repeat: no-repeat;
   background-position: top-center;
   background-size: cover;
-  /* scroll-snap-align: start; */
   display: flex;
   flex-direction: column;
   justify-content: end;

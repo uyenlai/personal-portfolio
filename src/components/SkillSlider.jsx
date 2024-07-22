@@ -4,7 +4,7 @@ import ProgressBar from "./ProgressBar";
 
 const SkillSlider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const percentage = [90, 89, 87, 85, 80, 95];
+  const percentage = [90, 89, 87, 85, 80, 88];
   const array = ["HTML", "CSS", "JavaScript", "React", "Tailwind", "Git"];
 
   const goToNextSlide = () => {

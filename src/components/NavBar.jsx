@@ -9,7 +9,7 @@ import navIcon2 from "../assets/img/nav-icon2.svg";
 const NavBar = () => {
   const [expanded, setExpanded] = useState(false);
   const [active, setActive] = useState("#home");
-  const [changeColor, setChangeColor] = useState(false);
+  const [changeColorNavbar, setChangeColorNavbar] = useState(false);
 
   const hanldleSetActiveLink = (link) => {
     setActive(link);
@@ -18,9 +18,9 @@ const NavBar = () => {
   useEffect(() => {
     const hanldleScroll = () => {
       if (window.scrollY > 150) {
-        setChangeColor(true);
+        setChangeColorNavbar(true);
       } else {
-        setChangeColor(false);
+        setChangeColorNavbar(false);
       }
     };
 
@@ -29,14 +29,41 @@ const NavBar = () => {
     return () => window.removeEventListener("scroll", hanldleScroll);
   }, []);
 
+  useEffect(() => {
+    const home = document.getElementById("home");
+    const skills = document.getElementById("skills");
+    const projects = document.getElementById("projects");
+    const contact = document.getElementById("contact");
+    const sections = [home, skills, projects, contact];
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActive(`#${entry.target.id}`);
+          }
+        });
+      },
+      {
+        threshold: 0.5,
+      }
+    );
+
+    sections.forEach((section) => {
+      if (section) {
+        observer.observe(section);
+      }
+    });
+  }, []);
+
   return (
-    <Navbar expand="lg" className={`${changeColor ? "nav light" : "nav"}`}>
+    <Navbar
+      expand="lg"
+      className={`${changeColorNavbar ? "nav light" : "nav"}`}
+    >
       <Container>
         {/* Logo */}
-        <Navbar.Brand
-          href="#home"
-          onClick={() => hanldleSetActiveLink("#home")}
-        >
+        <Navbar.Brand>
           <img src={logo} />
         </Navbar.Brand>
 
