@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
@@ -9,13 +9,28 @@ import navIcon2 from "../assets/img/nav-icon2.svg";
 const NavBar = () => {
   const [expanded, setExpanded] = useState(false);
   const [active, setActive] = useState("#home");
+  const [changeColor, setChangeColor] = useState(false);
 
   const hanldleSetActiveLink = (link) => {
     setActive(link);
   };
 
+  useEffect(() => {
+    const hanldleScroll = () => {
+      if (window.scrollY > 150) {
+        setChangeColor(true);
+      } else {
+        setChangeColor(false);
+      }
+    };
+
+    window.addEventListener("scroll", hanldleScroll);
+
+    return () => window.removeEventListener("scroll", hanldleScroll);
+  }, []);
+
   return (
-    <Navbar expand="lg">
+    <Navbar expand="lg" className={`${changeColor ? "nav light" : "nav"}`}>
       <Container>
         {/* Logo */}
         <Navbar.Brand

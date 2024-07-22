@@ -11,7 +11,7 @@ import Typewriter from "typewriter-effect";
 
 const Banner = () => {
   return (
-    <section className="banner">
+    <section id="banner" className="banner">
       <Container>
         <Row>
           <Col xs={12} md={6} xl={7} className="text">

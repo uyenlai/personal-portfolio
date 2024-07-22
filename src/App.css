@@ -57,6 +57,10 @@ h6 {
   z-index: 9999;
 }
 
+#root > nav.light {
+  background-color: rgb(18, 18, 18);
+}
+
 .navbar-brand {
   width: 9%;
 }
@@ -275,7 +279,7 @@ h6 {
 }
 
 .skills .skills-slider p {
-  color: #B8B8B8;
+  color: #b8b8b8;
   letter-spacing: 2px;
 }
 
@@ -325,4 +329,3 @@ h6 {
     padding: 12px;
   }
 }
-
