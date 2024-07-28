@@ -287,7 +287,6 @@ h6 {
 .projects {
   min-height: 100vh;
   padding: 5rem 0 3rem 0;
-
 }
 
 .projects .nav-tabs {
@@ -329,6 +328,61 @@ h6 {
 
 .projects .nav-tabs .nav-item .nav-link.active {
   background: linear-gradient(90.21deg, #aa367c -5.91%, #4a2fbd 111.58%);
+}
+
+.projects .tab-content {
+  padding: 1rem 0;
+}
+
+.projects .tab-content .col-sm-6,
+.projects .tab-content .col-md-4 {
+  margin-bottom: 1rem;
+}
+
+.projects .tab-content .card-container {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  position: relative;
+  border-radius: 26px;
+}
+
+.projects .tab-content .card-container .card-text {
+  text-align: center;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all 0.5s linear;
+}
+
+.projects .tab-content .card-container::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(90.21deg, #aa367c -5.91%, #4a2fbd 111.58%);
+  opacity: 0.85;
+  transition: all 0.5s linear;
+  border-radius: 26px;
+}
+
+.projects .tab-content .card-container:hover::before {
+  height: 100%;
+}
+
+.projects .tab-content .card-container:hover .card-text {
+  opacity: 1;
+}
+
+.projects .tab-content img {
+  width: 100%;
+  height: 100%;
+  border-radius: 26px;
 }
 
 /* RESPONSIVE */
@@ -388,17 +442,17 @@ h6 {
   }
 
   .projects .nav-tabs .nav-link {
-    padding: 2rem;
+    padding: 1rem;
   }
 }
 
 @media (min-width: 992px) {
   .projects .nav-tabs {
     width: 80%;
-    margin: 3rem auto;
+    margin: 2rem auto;
   }
 
   .projects .nav-tabs .nav-link {
-    padding: 2rem;
+    padding: 1rem;
   }
 }
