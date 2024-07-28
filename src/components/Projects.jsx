@@ -14,16 +14,19 @@ import Project3 from "../assets/img/project-img3.png";
 const Projects = () => {
   const projects = [
     {
+      href: "https://github.com/uyenlai?tab=repositories",
       imgUrl: Project1,
       title: "Project 1",
       description: "Lorem...",
     },
     {
+      href: "https://github.com/uyenlai?tab=repositories",
       imgUrl: Project2,
       title: "Project 2",
       description: "Lorem...",
     },
     {
+      href: "https://github.com/uyenlai?tab=repositories",
       imgUrl: Project3,
       title: "Project 3",
       description: "Lorem...",
@@ -54,9 +57,10 @@ const Projects = () => {
                 <Tab eventKey="tab1" title="Tab 1">
                   <TabContent>
                     <Row>
-                      {projects.map((project) => (
+                      {projects.map((project, index) => (
                         <ProjectCard
-                          key={project}
+                          key={index}
+                          href={project.href}
                           imgUrl={project.imgUrl}
                           title={project.title}
                           description={project.description}
@@ -68,14 +72,14 @@ const Projects = () => {
                 <Tab eventKey="tab2" title="Tab 2">
                   <TabContent>
                     <Row>
-                      {projects.map((project) => (
+                      {/* {projects.map((project) => (
                         <ProjectCard
                           key={project}
                           imgUrl={project.imgUrl}
                           title={project.title}
                           description={project.description}
                         />
-                      ))}
+                      ))} */}
                     </Row>
                   </TabContent>
                 </Tab>

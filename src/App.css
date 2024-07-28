@@ -357,6 +357,18 @@ h6 {
   transition: all 0.5s linear;
 }
 
+.projects .tab-content .card-container .card-text a {
+  all: unset;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.projects .tab-content .card-container .card-text a span {
+  font-size: 18px;
+  height: 100%;
+}
+
 .projects .tab-content .card-container::before {
   content: "";
   display: block;
