@@ -34,7 +34,7 @@ const SkillSlider = () => {
         });
       },
       {
-        threshold: 1,
+        threshold: 0.3,
       }
     );
 
