@@ -265,7 +265,7 @@ h6 {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  border: 0.5px solid rgb(255, 255, 255, 0.2);
+  border: 0.5px solid rgba(255, 255, 255, 0.2);
 }
 
 .skills .skills-slider h2,
@@ -286,12 +286,16 @@ h6 {
 /* Projects section */
 .projects {
   min-height: 100vh;
-  padding: 5rem 0 3rem 0;
+  padding: 5rem 0 1rem 0;
+  background: url("./assets/img/color-sharp2.png");
+  background-repeat: no-repeat;
+  background-position: 50% 30%;
+  background-size: 200%;
 }
 
 .projects .nav-tabs {
   margin-top: 2rem;
-  border: 0.5px solid rgb(255, 255, 255, 0.5);
+  border: 0.5px solid rgba(255, 255, 255, 0.5);
   border-radius: 40px;
 }
 
@@ -301,7 +305,7 @@ h6 {
 }
 
 .projects .nav-tabs .nav-item .nav-link {
-  background-color: rgb(255 255 255 / 10%);
+  background-color: rgba(255 255 255 / 10%);
   color: #fff;
   border-radius: 0;
   border: none;
@@ -396,6 +400,52 @@ h6 {
   height: 100%;
   border-radius: 26px;
 }
+/* Contact section */
+.contact {
+  background: linear-gradient(90.21deg, #aa367c -5.91%, #4a2fbd 111.58%);
+  padding: 2rem;
+}
+
+.contact .row {
+  gap: 4rem;
+}
+
+.contact img {
+  width: 92%;
+}
+
+.contact .contact-text h1 {
+  text-align: center;
+  font-size: 45px;
+  margin-bottom: 2rem;
+}
+
+.contact .contact-text p {
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 16px;
+  background-color: rgba(255, 255, 255, 0.4);
+  padding: 1rem 2rem;
+  margin: 24px 0;
+  font-size: 18px;
+}
+
+.contact .contact-text i {
+  margin-right: 10px;
+}
+
+.contact .contact-text .bi-envelope {
+  vertical-align: middle;
+}
+
+.contact .contact-text a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.contact .contact-text a:hover {
+  opacity: 0.6;
+  transition: all 0.2s linear;
+}
 
 /* RESPONSIVE */
 /* Banner section */
@@ -466,5 +516,13 @@ h6 {
 
   .projects .nav-tabs .nav-link {
     padding: 1rem;
+  }
+}
+
+/* Contact section */
+@media (min-width: 768px) {
+  .contact .row {
+    gap: 0;
+    align-items: center;
   }
 }
