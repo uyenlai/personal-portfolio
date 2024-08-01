@@ -447,6 +447,62 @@ h6 {
   transition: all 0.2s linear;
 }
 
+/* Footer */
+.footer {
+  background: url("./assets/img/footer-bg.png");
+  background-repeat: no-repeat;
+  background-size: 600%;
+  background-position: 15%;
+  padding: 3rem 12px;
+}
+
+.footer .logo {
+  width: 50%;
+}
+
+.footer .row {
+  justify-content: center;
+  align-items: center;
+}
+
+.footer .profiles {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.footer .profiles li {
+  text-decoration: none;
+  list-style-type: none;
+  margin: 0 0.5rem;
+}
+
+.footer .profiles a {
+  width: 42px;
+  height: 42px;
+  padding: 12px;
+  border: rgba(255, 255, 255, 0.5) solid 1px;
+  background-color: transparent;
+  border-radius: 50%;
+  opacity: 0.6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer .profiles a:hover,
+.footer .profiles a:active {
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
+}
+
+.footer p {
+  opacity: 0.6;
+  font-size: 14px;
+  text-align: right;
+  margin-top: 12px;
+}
+
 /* RESPONSIVE */
 /* Banner section */
 @media (max-width: 768px) {
@@ -524,5 +580,26 @@ h6 {
   .contact .row {
     gap: 0;
     align-items: center;
+  }
+}
+
+/* Footer */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .footer .logo {
+    width: 40%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer {
+    padding: 3rem 5rem;
+  }
+
+  .footer .logo {
+    width: 30%;
+  }
+
+  .footer p {
+    font-size: 16px;
   }
 }
