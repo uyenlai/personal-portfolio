@@ -60,7 +60,9 @@ h6 {
 }
 
 .navbar-brand {
-  width: 9%;
+  width: 120px;
+  height: 120px;
+  filter: invert(1);
 }
 
 .navbar-brand img {
@@ -458,6 +460,7 @@ h6 {
 
 .footer .logo {
   width: 50%;
+  filter: invert(1)
 }
 
 .footer .row {
@@ -501,6 +504,10 @@ h6 {
   font-size: 14px;
   text-align: right;
   margin-top: 12px;
+}
+
+.footer p a {
+  color: #fff;
 }
 
 /* RESPONSIVE */
