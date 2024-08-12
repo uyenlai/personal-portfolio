@@ -6,7 +6,7 @@ import Image from "react-bootstrap/esm/Image";
 import headerImg from "../assets/img/header-img.svg";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import Button from "react-bootstrap/esm/Button";
-import resume from "../documents/Uyen Lai - Resume - FrontEndDev.pdf";
+import resume from "../documents/Uyen Lai - Resume.pdf";
 import Typewriter from "typewriter-effect";
 
 const Banner = () => {
