@@ -36,10 +36,10 @@ const Banner = () => {
               />
             </h1>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam
-              provident laudantium eum perferendis excepturi recusandae tempora,
-              eos natus, et mollitia architecto quaerat nulla adipisci rerum non
-              libero soluta, obcaecati praesentium!
+              Join me on this digital odyssey, where lines of code transform
+              aspirations into accomplishments, passion fuels progress, and each
+              project is a testament to the limitless possibilities of
+              technology.
             </p>
             <Button>
               <a href={resume} target="_blank">

@@ -85,10 +85,10 @@ const Projects = () => {
           <Col xs={12} md={12} xl={12}>
             <h2>Projects</h2>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
-              voluptas molestias esse magnam? Facere iusto debitis labore
-              suscipit? Ex nobis vero tempora, iusto beatae officia perferendis
-              maiores fugit dolorum placeat!
+              I am eager to contribute my creative problem-solving skills and
+              passion for coding to dynamic teams. Committed to absorbing new
+              technologies, I aspire to foster personal and professional growth
+              in a challenging and innovative environment
             </p>
             <TabContainer>
               <Tabs

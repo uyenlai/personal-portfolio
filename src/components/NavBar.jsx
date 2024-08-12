@@ -45,8 +45,7 @@ const NavBar = () => {
         });
       },
       {
-        threshold: 0.8,
-        rootMargin: '50px'
+        threshold: 0.5,
       }
     );
 

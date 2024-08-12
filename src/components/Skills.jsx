@@ -13,10 +13,9 @@ const Skills = () => {
             <div className="skills-slider">
               <h2>Skills</h2>
               <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Dignissimos modi corrupti ut saepe iure, fugit animi
-                exercitationem dolore repudiandae harum doloribus id at, earum
-                provident, consectetur consequatur ab. Non, quas.
+                As a dedicated and passionate student with a solid foundation in
+                front-end development, I am enthusiastic about securing an
+                entry-level position in full-stack development.
               </p>
               <SkillSlider />
             </div>
